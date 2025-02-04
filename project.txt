@@ -1,0 +1,19 @@
+Doctor-Appointment-Booking-Appointment-System
+create forntend folder 
+
+step 1.frontend setup
+1.remove unessary all files
+2.add tailwind css configuration
+3.create folder structure insdie src folder- components,pages
+
+step 2.git intialize
+1.git init
+2.git add .
+3.git commit -m "forntend setup complete"
+
+step 3.login and register page create
+1.create login page
+2.create register page
+3.create home page
+4.create routing  insatll - package react-router-dom
+5.routing completed successfully
