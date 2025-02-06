@@ -17,3 +17,10 @@ step 3.login and register page create
 3.create home page
 4.create routing  insatll - package react-router-dom
 5.routing completed successfully
+
+step 4.login and register component created
+1.login form created have to fields email and password
+2.register form created have to fields name ,email, password
+3.axios ko package install karna
+4.register from ko api se untigrate karna
+5.login from ko api se intigrate karna 
