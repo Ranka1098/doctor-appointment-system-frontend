@@ -24,3 +24,6 @@ step 4.login and register component created
 3.axios ko package install karna
 4.register from ko api se untigrate karna
 5.login from ko api se intigrate karna 
+
+step 5.Home component banana jisme valid log user enter ho sake
+1.home component me ek get api call karenge logged user ka token match hota hai.
