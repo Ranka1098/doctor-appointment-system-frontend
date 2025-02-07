@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getUserData = async () => {
@@ -30,6 +32,16 @@ const Home = () => {
     getUserData();
   }, []);
 
+  const handleLogout = async () => {
+    console.log("logout");
+    const res = await axios.get("http://localhost:3000/logout");
+    if (res.status === 200) {
+      alert("logout successfully");
+      localStorage.removeItem("token");
+      navigate("/login");
+    }
+  };
+
   return (
     <div>
       <h1>Home</h1>
@@ -41,6 +53,10 @@ const Home = () => {
       ) : (
         <p>Loading user data...</p>
       )}
+
+      <button onClick={handleLogout} className="px-2 py-2 border">
+        logout
+      </button>
     </div>
   );
 };
