@@ -31,3 +31,11 @@ step 5.Home component banana jisme valid log user enter ho sake
 step 6.logout functionality banana
 1.logout api ko call karana
 2.localstorage se token ko remove karna
+
+step 7.routes ko protect karna or public banana
+1.user direct home page per redirect na ho
+2.jab tak user logged in na ho tab tak home page redirect na ho
+3.user user logged in karta hai to wapas login page per redirect na ho
+4.protectRoute naam ka component banayenge jiske under hum token ko check karenge or component
+condtionally return karayenge
+5.public route banayenge agar al ready login hai to usko hume login or register page show nahi karana hai

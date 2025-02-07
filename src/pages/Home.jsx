@@ -38,6 +38,7 @@ const Home = () => {
     if (res.status === 200) {
       alert("logout successfully");
       localStorage.removeItem("token");
+      localStorage.removeItem("user");
       navigate("/login");
     }
   };

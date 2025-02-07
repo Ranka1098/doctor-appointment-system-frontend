@@ -22,8 +22,9 @@ const Login = () => {
       });
       if (response.status === 200) {
         const { token, user } = response.data;
+        const userData = { name: user.name, email: user.email };
         localStorage.setItem("token", JSON.stringify(token));
-        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify(userData));
         alert("login successfull");
         navigate("/");
       }
