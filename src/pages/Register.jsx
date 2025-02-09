@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { showLoading, hideLoading } from "../redux/slices/alertSlice";
 import axios from "axios";
 
 const Register = () => {
@@ -8,6 +10,7 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const dispatch = useDispatch();
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -21,13 +24,14 @@ const Register = () => {
     setError("");
 
     try {
+      dispatch(showLoading());
       const response = await axios.post("http://localhost:3000/register", {
         name: data.name,
         email: data.email,
         password: data.password,
       });
       console.log(response);
-
+      dispatch(hideLoading());
       if (response.status === 201) {
         alert("send data successfully");
         setData({
@@ -38,16 +42,13 @@ const Register = () => {
       }
       navigate("/login");
     } catch (error) {
+      dispatch(hideLoading());
       if (error.response) {
         setError(error.response.data.message);
       } else {
         alert("something wen wrong plss try again later");
       }
     }
-
-    // console.log(data);
-
-    // navigate("/login");
   };
   return (
     <div>

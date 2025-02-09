@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { showLoading, hideLoading } from "../redux/slices/alertSlice";
 import axios from "axios";
 
 const Login = () => {
@@ -7,6 +9,8 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -16,10 +20,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      dispatch(showLoading());
       const response = await axios.post("http://localhost:3000/login", {
         email: data.email,
         password: data.password,
       });
+      dispatch(hideLoading());
       if (response.status === 200) {
         const { token, user } = response.data;
         const userData = { name: user.name, email: user.email };
@@ -33,6 +39,7 @@ const Login = () => {
         password: "",
       });
     } catch (error) {
+      dispatch(hideLoading());
       if (error.response) {
         alert(error.response.data.message);
       }
