@@ -1,36 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { FaUser } from "react-icons/fa";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { LuLogOut } from "react-icons/lu";
 import sidebarMenu from "../data/data";
+import { useDispatch, useSelector } from "react-redux";
+import { logOutUser } from "../redux/slices/user";
 const Home = () => {
-  const [user, setUser] = useState(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const getUserData = async () => {
-      try {
-        const token = JSON.parse(localStorage.getItem("token"));
-
-        if (!token) {
-          console.log("No token found in localStorage");
-          return;
-        }
-
-        const res = await axios.get("http://localhost:3000/getuser", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-
-        setUser(res.data.user); // Store user data in state
-      } catch (error) {
-        console.log("Error fetching user data:", error);
-      }
-    };
-
-    getUserData();
-  }, []);
+  const dispatch = useDispatch();
+  const { user } = useSelector((store) => store.user);
+  // jo redux store me usert tha usse liya
 
   const handleLogout = async () => {
     console.log("logout");
@@ -38,7 +17,7 @@ const Home = () => {
     if (res.status === 200) {
       alert("logout successfully");
       localStorage.removeItem("token");
-      localStorage.removeItem("user");
+      dispatch(logOutUser());
       navigate("/login");
     }
   };
@@ -77,7 +56,12 @@ const Home = () => {
 
       {/* content */}
       <div className="content w-full h-screen  flex gap-1 flex-col">
-        <div className="header h-[80px] p-5 border border-black">header</div>
+        <div className="header h-[80px] p-5 border border-black flex justify-end items-center gap-5">
+          <FaUser />
+          <Link to={"/profile"}>
+            <p> {user?.name}</p>
+          </Link>
+        </div>
         <div className="body h-screen border border-black">body</div>
       </div>
     </div>

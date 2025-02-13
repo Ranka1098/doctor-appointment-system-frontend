@@ -45,3 +45,13 @@ setp 8.reduxjs toolkit setup karna
 2.configure store and pass the reducer object to store - @rduxjs/toolkit
 3.createSlice  - @rduxjs/toolkit
 4.provide store to app - react-redux
+
+step 8.user ko get karna
+1.user ko get karne ke liye user ka  slice banayenge.
+2.protect route me user ko get karenge
+3.getUser naam ka function banayenge jiske under hum phele token ko get karenge
+4.user ki get request call karenge 
+5.jo user hume mile ga usko store me save karo
+6.header componet me use ke name ko show karenge.
+
+

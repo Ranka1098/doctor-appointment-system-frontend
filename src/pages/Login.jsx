@@ -84,6 +84,16 @@ const Login = () => {
           </button>
         </form>
         {/* form */}
+        <p className="text-center">
+          Dont have account ?
+          <span
+            onClick={() => navigate("/register")}
+            className="cursor-pointer text-blue-500"
+          >
+            {" "}
+            Register
+          </span>
+        </p>
       </div>
     </div>
   );
