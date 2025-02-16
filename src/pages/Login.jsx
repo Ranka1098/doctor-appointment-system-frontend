@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 
 import axios from "axios";
 
@@ -27,8 +27,8 @@ const Login = () => {
       if (response.status === 200) {
         const { token, user } = response.data;
         const userData = { name: user.name, email: user.email };
-        
-        localStorage.setItem("token", JSON.stringify(token));
+
+        localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(userData));
         alert("login successfull");
         navigate("/");
