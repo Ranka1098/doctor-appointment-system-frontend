@@ -31,7 +31,6 @@ const Register = () => {
         password: data.password,
       });
       console.log(response);
-      dispatch(hideLoading());
       if (response.status === 201) {
         alert("send data successfully");
         setData({
@@ -42,7 +41,6 @@ const Register = () => {
       }
       navigate("/login");
     } catch (error) {
-      dispatch(hideLoading());
       if (error.response) {
         setError(error.response.data.message);
       } else {

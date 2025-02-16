@@ -12,13 +12,13 @@ const Home = () => {
   // jo redux store me usert tha usse liya
 
   const handleLogout = async () => {
-    console.log("logout");
     const res = await axios.get("http://localhost:3000/logout");
     if (res.status === 200) {
       alert("logout successfully");
       localStorage.removeItem("token");
       dispatch(logOutUser());
       navigate("/login");
+      localStorage.clear();
     }
   };
 
