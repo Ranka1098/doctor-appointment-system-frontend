@@ -1,6 +1,6 @@
 import { FaHome, FaListUl, FaUserMd, FaUser } from "react-icons/fa";
 
-const sidebarMenu = [
+export const userMenu = [
   {
     name: "Home",
     path: "/",
@@ -22,4 +22,26 @@ const sidebarMenu = [
     icon: <FaUser />,
   },
 ];
-export default sidebarMenu;
+
+export const adminMenu = [
+  {
+    name: "Home",
+    path: "/",
+    icon: <FaHome />,
+  },
+  {
+    name: "Doctors",
+    path: "/doctor",
+    icon: <FaUserMd />,
+  },
+  {
+    name: "user",
+    path: "/users",
+    icon: <FaListUl />,
+  },
+  {
+    name: "Profile",
+    path: "/profile",
+    icon: <FaUser />,
+  },
+];

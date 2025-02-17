@@ -2,7 +2,7 @@ import { FaUser } from "react-icons/fa";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { LuLogOut } from "react-icons/lu";
-import sidebarMenu from "../data/data";
+import { adminMenu, userMenu } from "../data/data";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser, setUser } from "../redux/slices/user";
 import { useEffect } from "react";
@@ -10,6 +10,9 @@ const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((store) => store.user);
+
+  // rendering menu list
+  const sidebarMenu = user?.isAdmin ? adminMenu : userMenu;
 
   // jo redux store me usert tha usse liya
 
