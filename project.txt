@@ -60,3 +60,20 @@ step 9.seprate menu banana user or doctor ke liye
   const sidebarMenu = user?.isAdmin ? adminMenu : userMenu;
 2.agar doctor ka menu hai to menu me  doctors,user or profile show karenge.
 3.agar user ka menu hai to menu me Appointment,apply doctor or profile show karenge. 
+
+step 10.apply doctor form
+1.apply doctor ka from create karenge. jiske under doctor ki personal or professional infomation ko get karenge.
+2.personal me -firstName,lastName,phone,email,address,website
+3.professional me - specailization ,experince,fessPerConsultation,time ki range
+4.startTime and endTime save in 
+ if (startTime && endTime) {
+    setInformation((prev) => ({ ...prev, timing: `${startTime} - ${endTime}` }));
+  }
+5.api call and send the data to the server
+
+step 11.show notification request 
+1.get user fro redux-store
+2.if user is userAdmin is shows menu user.isAdmin true
+const sidebarMenu = user?.isAdmin ? adminMenu : userMenu;
+3.notification badge
+show notification icon and notification number

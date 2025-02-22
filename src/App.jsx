@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import ProtectRoute from "./components/ProtectRoute";
 import PublicRoute from "./components/PublicRoute";
+import ApplyDoctor from "./pages/ApplyDoctor";
+import Appointment from "./pages/Appointment";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
@@ -15,6 +18,30 @@ const App = () => {
           element={
             <ProtectRoute>
               <Home />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          path="/apply-doctor"
+          element={
+            <ProtectRoute>
+              <ApplyDoctor />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          path="/appointment"
+          element={
+            <ProtectRoute>
+              <Appointment />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectRoute>
+              <Profile />
             </ProtectRoute>
           }
         />

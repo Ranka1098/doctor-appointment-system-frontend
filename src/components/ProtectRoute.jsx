@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 const ProtectRoute = ({ children }) => {
   // token ko check karenge
   const token = localStorage.getItem("token");
