@@ -93,10 +93,15 @@ const Layout = ({ children }) => {
         <div className="right-side flex-1 border-b">
           <div className="header  w-full h-[5rem] border flex items-center justify-end pr-[1rem] ">
             <div className="relative mr-[15px]">
-              <IoMdNotifications size={25} />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                {user && user?.notification.length}
-              </span>
+              <Link to={"/notification"}>
+                <IoMdNotifications size={25} />
+
+                {user?.isAdmin && user?.notification?.length > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                    {user && user.notification ? user.notification.length : 0}
+                  </span>
+                )}
+              </Link>
             </div>
             <Link to={"/profile"}>
               <p> {user?.name}</p>

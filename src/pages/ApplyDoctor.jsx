@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -23,14 +23,14 @@ const ApplyDoctor = () => {
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
 
-  const handleTimeChange = () => {
+  useEffect(() => {
     if (startTime && endTime) {
       setInformation((prev) => ({
         ...prev,
         timing: `${startTime} - ${endTime}`,
       }));
     }
-  };
+  }, [startTime, endTime]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -251,7 +251,6 @@ const ApplyDoctor = () => {
                 value={startTime}
                 onChange={(e) => {
                   setStartTime(e.target.value);
-                  handleTimeChange();
                 }}
               />
               <span> - </span>
@@ -261,7 +260,6 @@ const ApplyDoctor = () => {
                 value={endTime}
                 onChange={(e) => {
                   setEndTime(e.target.value);
-                  handleTimeChange();
                 }}
               />
             </div>

@@ -36,7 +36,7 @@ export const adminMenu = [
   },
   {
     name: "user",
-    path: "/users",
+    path: "/user",
     icon: <FaListUl />,
   },
   {

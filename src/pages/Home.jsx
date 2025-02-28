@@ -40,7 +40,7 @@ const Home = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        dispatch(setUser(res.data.data));
+        dispatch(setUser({ ...user, doctors: res.data }));
       } catch (error) {
         console.log(error.message);
       }

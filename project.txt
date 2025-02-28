@@ -77,3 +77,14 @@ step 11.show notification request
 const sidebarMenu = user?.isAdmin ? adminMenu : userMenu;
 3.notification badge
 show notification icon and notification number
+
+step 12.notification ko get karenge
+1.notification ke liye new component create karenge
+2.uss component ko layout ke under wrap kar lenge
+3.app.js ke under notification ka route create kar lenge
+4. useke under 2 tabs banayenge. - unread notification , read notification
+5.user ko redux ke store se get kar lenge user ke paas hai notification
+6.unread notification me user ke notification ko print kae lenge
+7.notification card ke upar onclick path ko target kar na hai jab bhi admin notification per click 
+karega to notification doctor ke component per redirect ho jayegi.
+8.mark all read text per click karunga to all notication unread notifcation tab se hat kar readc notification per aa jayegi

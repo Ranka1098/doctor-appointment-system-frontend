@@ -8,6 +8,9 @@ import PublicRoute from "./components/PublicRoute";
 import ApplyDoctor from "./pages/ApplyDoctor";
 import Appointment from "./pages/Appointment";
 import Profile from "./pages/Profile";
+import NotificationPage from "./pages/NotificationPage";
+import Doctor from "./pages/Doctor";
+import User from "./pages/User";
 
 const App = () => {
   return (
@@ -34,6 +37,30 @@ const App = () => {
           element={
             <ProtectRoute>
               <Appointment />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          path="/notification"
+          element={
+            <ProtectRoute>
+              <NotificationPage />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          path="/doctor"
+          element={
+            <ProtectRoute>
+              <Doctor />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          path="/user"
+          element={
+            <ProtectRoute>
+              <User />
             </ProtectRoute>
           }
         />
