@@ -88,3 +88,16 @@ step 12.notification ko get karenge
 7.notification card ke upar onclick path ko target kar na hai jab bhi admin notification per click 
 karega to notification doctor ke component per redirect ho jayegi.
 8.mark all read text per click karunga to all notication unread notifcation tab se hat kar readc notification per aa jayegi
+
+step 13.notication ko delte karna
+1.read notifcation tab mein jo notifications aayi hai unko delete karenge.
+
+step 14.doctor or user ki list show karenge
+1.create doctor and user components in admin folder.
+2.doctor componet me all doctors ki deatil show karenge
+3.doctor ka status check karenge approved hai pendding hai
+4.user componet me all user ki deatil show karenge
+
+step 15.admin se doctor ko aprove karenge.
+1.agar admin aprove button per click kare ko user ko dcotor approved ho jaye ga or doctor banjaye ga.
+

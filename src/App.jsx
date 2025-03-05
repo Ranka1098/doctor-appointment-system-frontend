@@ -9,8 +9,8 @@ import ApplyDoctor from "./pages/ApplyDoctor";
 import Appointment from "./pages/Appointment";
 import Profile from "./pages/Profile";
 import NotificationPage from "./pages/NotificationPage";
-import Doctor from "./pages/Doctor";
-import User from "./pages/User";
+import Doctor from "./pages/admin/Doctor";
+import User from "./pages/admin/User";
 
 const App = () => {
   return (
