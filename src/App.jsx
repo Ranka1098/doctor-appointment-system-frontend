@@ -7,7 +7,7 @@ import ProtectRoute from "./components/ProtectRoute";
 import PublicRoute from "./components/PublicRoute";
 import ApplyDoctor from "./pages/ApplyDoctor";
 import Appointment from "./pages/Appointment";
-import Profile from "./pages/Profile";
+import Profile from "./pages/admin/Profile";
 import NotificationPage from "./pages/NotificationPage";
 import Doctor from "./pages/admin/Doctor";
 import User from "./pages/admin/User";
@@ -65,7 +65,7 @@ const App = () => {
           }
         />
         <Route
-          path="/profile"
+          path="/doctor/profile/:id"
           element={
             <ProtectRoute>
               <Profile />

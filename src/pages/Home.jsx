@@ -1,8 +1,5 @@
-import { FaUser } from "react-icons/fa";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import { LuLogOut } from "react-icons/lu";
-import { adminMenu, userMenu } from "../data/data";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser, setUser } from "../redux/slices/user";
 import { useEffect } from "react";
@@ -12,21 +9,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((store) => store.user);
 
-  // rendering menu list
-  const sidebarMenu = user?.isAdmin ? adminMenu : userMenu;
-
   // jo redux store me usert tha usse liya
-
-  const handleLogout = async () => {
-    const res = await axios.get("http://localhost:3000/logout");
-    if (res.status === 200) {
-      alert("logout successfully");
-      localStorage.removeItem("token");
-      dispatch(logOutUser());
-      navigate("/login");
-      localStorage.clear();
-    }
-  };
 
   useEffect(() => {
     const getuserData = async () => {

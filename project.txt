@@ -101,3 +101,13 @@ step 14.doctor or user ki list show karenge
 step 15.admin se doctor ko aprove karenge.
 1.agar admin aprove button per click kare ko user ko dcotor approved ho jaye ga or doctor banjaye ga.
 
+step 16.single doctor ki profile ko get karenge uske id se
+1.jo user agar doctor aprove ho chuke hai unko alag menu show karo
+2.user jo doctor aprove ho chuke hai unki profile ko get karna
+
+step 17.single doctor ki profile ko update karna
+1.phele hum form banayenge jis ke under doctor ki information hogi
+2.form ke under doctor ki jo usko value ko save karenge
+3.update ki api call karna or uske under updated value ko pass karna or authorization karna.
+4.agar doctor ki prifle update ho gayi to usse frontend me show karna.
+

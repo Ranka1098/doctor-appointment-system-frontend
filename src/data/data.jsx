@@ -1,5 +1,4 @@
 import { FaHome, FaListUl, FaUserMd, FaUser } from "react-icons/fa";
-
 export const userMenu = [
   {
     name: "Home",
@@ -18,7 +17,7 @@ export const userMenu = [
   },
   {
     name: "Profile",
-    path: "/profile",
+    path: `/doctor/profile/:id`,
     icon: <FaUser />,
   },
 ];

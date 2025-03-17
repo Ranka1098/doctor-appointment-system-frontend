@@ -8,7 +8,6 @@ import { setUser } from "../redux/slices/user";
 const NotificationPage = () => {
   const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
-  console.log(user?.notification);
 
   const [activeTab, setActiveTab] = useState("unread");
 

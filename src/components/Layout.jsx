@@ -1,21 +1,48 @@
 import React from "react";
 import axios from "axios";
+import { FaHome, FaListUl, FaUserMd, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { LuLogOut } from "react-icons/lu";
-import { adminMenu, userMenu } from "../data/data";
+import { adminMenu } from "../data/data";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser, setUser } from "../redux/slices/user";
 import { useEffect } from "react";
 import { IoMdNotifications } from "react-icons/io";
+import { userMenu } from "../data/data";
 
 const Layout = ({ children }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((store) => store.user);
 
-  // // rendering menu list
-  const sidebarMenu = user?.isAdmin ? adminMenu : userMenu;
+  // ---------------------doctor menu--------------------------------
+  const doctorMenu = [
+    {
+      name: "Home",
+      path: "/",
+      icon: <FaHome />,
+    },
+    {
+      name: "Appointment",
+      path: "/appointment",
+      icon: <FaListUl />,
+    },
 
+    {
+      name: "Profile",
+      path: `/doctor/profile/${user?._id}`,
+      icon: <FaUser />,
+    },
+  ];
+  // ---------------------doctor menu--------------------------------
+
+  // // rendering menu list
+  const sidebarMenu = user?.isAdmin
+    ? adminMenu
+    : user?.isDoctor
+    ? doctorMenu
+    : userMenu;
+  // agar useradmin hai to admin menu show karo user hai to user menu show karo agar user doctor hai to doctor menu show karo.
   const handleLogout = async () => {
     const res = await axios.get("http://localhost:3000/logout");
     if (res.status === 200) {
@@ -96,7 +123,7 @@ const Layout = ({ children }) => {
               <Link to={"/notification"}>
                 <IoMdNotifications size={25} />
 
-                {user?.isAdmin && user?.notification?.length > 0 && (
+                {user && user?.notification?.length > 0 && (
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
                     {user && user.notification ? user.notification.length : 0}
                   </span>

@@ -35,7 +35,10 @@ const User = () => {
         </thead>
         <tbody>
           {user.map((user) => (
-            <tr className="bg-white hover:bg-gray-100 text-gray-700 text-center">
+            <tr
+              className="bg-white hover:bg-gray-100 text-gray-700 text-center"
+              key={user._id}
+            >
               <td className="p-3 border border-gray-300">{user.name}</td>
               <td className="p-3 border border-gray-300">{user.email}</td>
               <td className="p-3 border border-gray-300">

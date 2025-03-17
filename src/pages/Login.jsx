@@ -59,6 +59,7 @@ const Login = () => {
               onChange={handleChange}
               className="border p-1 "
               placeholder="enter email"
+              autoComplete="email"
             />
           </div>
           {/* pasword */}
@@ -69,6 +70,7 @@ const Login = () => {
               name="password"
               value={data.password}
               onChange={handleChange}
+              autoComplete="current-password"
               className="border p-1 "
               placeholder="enter password"
             />
